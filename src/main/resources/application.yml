@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: hogwarts-ms
+
+  data:
+    datasource:
+      url: ${MONGODB_URI:mongodb://localhost:27017/}
+      driver-class-name: com.mongodb.client.MongoClient
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/}
+      auto-index-creation: false
+      database: ${HOGWARTS_DATABASE_NAME:Hogwarts}
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /hogwarts/v1
+
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:INFO}
+    com:
+      api: ${LOGGING_LEVEL_LSA:TRACE}
+
+mongock:
+  migration-scan-package:
+    - br.org.hogwarts.infrastructure.database.mongo.migration
+  transactionEnabled: false
+
+application:
+  settings:
+    max-result-per-query: ${MAX_RESULTS_PER_QUERY:100}
