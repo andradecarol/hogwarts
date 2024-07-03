@@ -32,7 +32,7 @@ Recurso responsável por manter os tipos de produto disponíveis proposta e apó
 
 ## 📐 Arquitetura
 
-Esse microsserviço foi estruturado usando [arquitetura hexagonal](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)#:~:text=The%20hexagonal%20architecture%2C%20or%20ports,means%20of%20ports%20and%20adapters.) seguindo a estrutura de pastas abaixo
+Esse microsserviço foi estruturado usando MVC seguindo a estrutura de pastas abaixo
 
 ```
     /application
