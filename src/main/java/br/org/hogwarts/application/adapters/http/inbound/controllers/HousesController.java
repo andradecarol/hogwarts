@@ -45,20 +45,20 @@ public class HousesController implements HousesControllerSwagger {
 
 
     @Override
-    public ResponseEntity<HouseResponse> get(UUID motivoRecusaId) {
-        HouseResponse houseResponse = housesService.getByIdHouse(motivoRecusaId.toString());
+    public ResponseEntity<HouseResponse> get(UUID houseId) {
+        HouseResponse houseResponse = housesService.getByIdHouse(houseId.toString());
         return ResponseEntity.status(HttpStatus.OK).body(houseResponse);
     }
 
     @Override
-    public ResponseEntity<Void> put(UUID motivoRecusaId, HouseCreateRequest houseCreateRequest) {
-        housesService.updateHouse(motivoRecusaId.toString(), houseCreateRequest);
+    public ResponseEntity<Void> put(UUID houseId, HouseCreateRequest houseCreateRequest) {
+        housesService.updateHouse(houseId.toString(), houseCreateRequest);
         return ResponseEntity.noContent().build();
     }
 
 
-    public ResponseEntity<Void> patch(UUID motivoRecusaId, HousePatchRequest housePatchRequest) {
-        housesService.patchHouse(motivoRecusaId.toString(), housePatchRequest);
+    public ResponseEntity<Void> patch(UUID houseId, HousePatchRequest housePatchRequest) {
+        housesService.patchHouse(houseId.toString(), housePatchRequest);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
